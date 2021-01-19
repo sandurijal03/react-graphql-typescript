@@ -1,0 +1,43 @@
+#queries
+
+query GET_ALL_POSTS {
+  posts {
+    id
+    createdAt
+    updatedAt
+    title
+  }
+}
+
+query GET_POST($id: Float!) {
+  post(id: $id) {
+    id
+    createdAt
+    updatedAt
+    title
+  }
+}
+
+# mutation
+
+mutation CREATE_POST($title: String!) {
+  createPost(title: $title) {
+    id
+    createdAt
+    updatedAt
+    title
+  }
+}
+
+mutation UPDATE_POST($id: Float!, $title: String) {
+  updatePost(title: $title, id: $id) {
+    id
+    createdAt
+    updatedAt
+    title
+  }
+}
+
+mutation DELETE_POST($id: Float!) {
+  deletePost(id: $id)
+}
