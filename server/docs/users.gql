@@ -8,3 +8,18 @@ mutation REGISTER($username: String!, $password: String!) {
     username
   }
 }
+
+mutation LOGIN($username: String!, $password: String!) {
+  login(options: { username: $username, password: $password }) {
+    errors {
+      field
+      message
+    }
+    user {
+      id
+      createdAt
+      updatedAt
+      username
+    }
+  }
+}
